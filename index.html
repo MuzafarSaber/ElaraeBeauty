@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elaraé | Luxury Beauty Essentials – Makeup, Skincare & More</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --accent-color: #d4af37; /* Gold accent */
+            --light-color: #f8f8f8;
+            --dark-color: #222;
+            --font-primary: 'Playfair Display', serif;
+            --font-secondary: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            color: var(--primary-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background-color: #c19b2c;
+            transform: translateY(-2px);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--dark-color);
+            color: white;
+            font-size: 0.8rem;
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .top-links a, .auth-links a {
+            margin-right: 15px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .top-links a:hover, .auth-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .auth-links a:last-child {
+            margin-right: 0;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+        .logo {
+            display: flex;
+          /*  flex-direction: column; */
+            align-items: center;
+        }
+        .logo-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--dark-color);
+            line-height: 1;
+        }
+        .logo-wrapper {
+            display: inline-block; /* Shrink-to-fit width */
+            text-align: center; /* Centers children horizontally */
+        }
+
+        .logo-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--dark-color);
+            margin-top: 5px;
+            line-height: 1;
+            display: block;
+            text-align: center; /* Ensures text aligns within its container */
+            padding-right: 8px; /* Compensates for letter-spacing offset */
+            font-weight:bold;
+        }
+
+
+        .logo h1 {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            letter-spacing: 3px;
+        }
+
+        .search-bar {
+            display: flex;
+            width: 50%;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-right: none;
+            font-size: 0.9rem;
+        }
+
+        .search-bar button {
+            padding: 0 20px;
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #444;
+        }
+
+        /* Navigation - Improved */
+        .main-nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-list > li {
+            position: relative;
+        }
+
+        .nav-list > li > a {
+            display: block;
+            padding: 18px 22px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-list > li > a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Enhanced Mega Menu */
+        .mega-menu {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            border-top: 2px solid var(--accent-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none;
+            padding: 25px 0;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dropdown:hover .mega-menu {
+            display: block;
+        }
+
+        .mega-menu-content {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mega-menu-column {
+            flex: 1;
+            padding: 0 15px;
+            background-color: white;
+            position: relative;
+        }
+
+        .mega-menu-column:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background-color: rgba(0,0,0,0.05);
+        }
+
+        .mega-menu-column h4 {
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            font-family: var(--font-primary);
+            font-size: 1.15rem;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-weight: 600;
+        }
+
+        .mega-menu-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .mega-menu-column ul li a {
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: block;
+            padding: 4px 0;
+            position: relative;
+        }
+
+        .mega-menu-column ul li a:hover {
+            color: var(--accent-color);
+            padding-left: 8px;
+        }
+
+        .mega-menu-column ul li a:hover::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 600px;
+            min-height: 600px;
+            max-height: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slides {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+        
+        .slide.active {
+           opacity: 1;
+        }
+
+        /* Hero Structure */
+        .hero-content-wrapper {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .slide.active .hero-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        /* Button Enhancement */
+        .hero-content .btn {
+            background: transparent;
+            border: 2px solid white;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-content .btn:hover {
+            background: white;
+            color: var(--accent-color);
+        }
+
+        .slide-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .dot.active {
+            background-color: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                        rgba(0,0,0,0.2) 0%, 
+                        rgba(0,0,0,0.5) 100%);
+        }
+
+        /* Featured Categories */
+        .featured-categories {
+            padding: 80px 0 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: var(--font-primary);
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .category-card {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .category-img {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .category-card h3 {
+            margin: 20px 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .category-card .btn {
+            margin-bottom: 25px;
+        }
+
+        /* Featured Brands */
+        .featured-brands {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+
+        .brands-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .brand-item {
+            height: 80px;
+            width: 150px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .brand-item img {
+            max-width: 80%;
+            max-height: 50px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: white;
+            z-index: 1001;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu .nav-list {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .mobile-menu .nav-list > li {
+            margin: 10px 0;
+        }
+
+        .no-scroll {
+            overflow: hidden;
+        }
+
+        /* Toast Notifications */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1002;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+
+        /* Cart Counter */
+        .cart-count {
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 992px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+            }
+        }
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h4 {
+            font-family: var(--font-primary);
+            margin-bottom: 25px;
+            font-size: 1.25rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-column ul li {
+            margin-bottom: 14px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form button {
+            padding: 0 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #c19b2c;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .payment-methods i {
+            font-size: 1.8rem;
+            margin-left: 12px;
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .payment-methods i:hover {
+            color: var(--accent-color);
+        }
+        .btn-add-to-cart {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+.btn-add-to-cart:hover {
+    background-color: #c19b2c;
+    transform: translateY(-2px);
+}
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .search-bar {
+                width: 100%;
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero {
+                height: 500px;
+                min-height: 500px;
+             }
+            .hero-content {
+                padding: 0 20px;
+                text-align: center;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.8rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .brands-grid {
+                gap: 20px;
+            }
+            
+            .brand-item {
+                width: 130px;
+                height: 70px;
+            }
+            .hero {
+                 height: 400px;
+                 min-height: 400px;
+            }
+    
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+        }
+
+        /* Best Offers Section */
+    .best-offers {
+        padding: 80px 0;
+        background-color: #fcf9f5; /* Soft ivory background */
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: var(--secondary-color);
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+    }
+
+    .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .offer-card {
+        position: relative;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .offer-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .offer-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 2;
+    }
+
+    .offer-img {
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .offer-details {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .offer-details h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: var(--dark-color);
+    }
+
+    .price {
+        margin: 15px 0;
+        font-weight: 600;
+    }
+
+    .current-price {
+        color: var(--accent-color);
+        font-size: 1.3rem;
+    }
+
+    .original-price {
+        color: var(--secondary-color);
+        text-decoration: line-through;
+        margin-left: 8px;
+        font-size: 1rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .offers-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .offers-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-links">
+                <a href="#">Help & Contact</a>
+                <a href="#">Track Order</a>
+                <a href="#">Store Locator</a>
+            </div>
+            <div class="auth-links">
+                <a href="#">Sign In</a>
+                <a href="#">Register</a>
+                <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
+                <a href="#"><i class="fas fa-shopping-bag"></i> Bag (0)</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <!-- Updated Header Section -->
+    <header class="header">
+        <div class="container">
+                <div class="logo">
+                 <div class="logo-wrapper"> 
+                    <div class="logo-main">Elaraé</div>
+                 <div class="logo-sub">BEAUTY</div>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for luxury beauty products...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation - Enhanced -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="dropdown">
+                    <a href="#">MAKEUP</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h4>Face</h4>
+                                <ul>
+                                    <li><a href="#">Foundation</a></li>
+                                    <li><a href="#">Concealer</a></li>
+                                    <li><a href="#">Powder</a></li>
+                                    <li><a href="#">Blush</a></li>
+                                    <li><a href="#">Highlighter</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Eyes</h4>
+                                <ul>
+                                    <li><a href="#">Eyeshadow</a></li>
+                                    <li><a href="#">Eyeliner</a></li>
+                                    <li><a href="#">Mascara</a></li>
+                                    <li><a href="#">Eyebrows</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Lips</h4>
+                                <ul>
+                                    <li><a href="#">Lipstick</a></li>
+                                    <li><a href="#">Lip Gloss</a></li>
+                                    <li><a href="#">Lip Liner</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>More</h4>
+                                <ul>
+                                    <li><a href="#">Nails</a></li>
+                                    <li><a href="#">Tools & Brushes</a></li>
+                                    <li><a href="#">Makeup Gift Sets</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">SKINCARE</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h4>Core Products</h4>
+                                <ul>
+                                    <li><a href="#">Moisturiser</a></li>
+                                    <li><a href="#">Serum</a></li>
+                                    <li><a href="#">Toner</a></li>
+                                    <li><a href="#">Cleanser</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Specialized Care</h4>
+                                <ul>
+                                    <li><a href="#">Eyecare</a></li>
+                                    <li><a href="#">Suncare</a></li>
+                                    <li><a href="#">Anti-Aging</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Collections</h4>
+                                <ul>
+                                    <li><a href="#">Skincare Gift Sets</a></li>
+                                    <li><a href="#">Travel Sets</a></li>
+                                    <li><a href="#">Luxury Collections</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">FRAGRANCE</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h4>For Her</h4>
+                                <ul>
+                                    <li><a href="#">Floral</a></li>
+                                    <li><a href="#">Oriental</a></li>
+                                    <li><a href="#">Woody</a></li>
+                                    <li><a href="#">Fresh</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>For Him</h4>
+                                <ul>
+                                    <li><a href="#">Sport</a></li>
+                                    <li><a href="#">Woody</a></li>
+                                    <li><a href="#">Leather</a></li>
+                                    <li><a href="#">Citrus</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Collections</h4>
+                                <ul>
+                                    <li><a href="#">Niche Fragrances</a></li>
+                                    <li><a href="#">Home Fragrances</a></li>
+                                    <li><a href="#">Fragrance Gift Sets</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+              
+                <li class="dropdown">
+                    <a href="#">HEALTH & WELLNESS</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h4>Health & Pharmacy</h4>
+                                 <ul>
+                                     <li><a href="#">Foundation</a></li> 
+                                     <li><a href="#">Concealer</a></li>
+                                     <li><a href="#">Powder</a></li>
+                                     <li><a href="#">Blush</a></li>
+                                     <li><a href="#">Highlighter</a></li>
+                                 </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Wellbeing</h4>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Fitness & Sports</h4>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Spa Essentials</h4>
+                            </div>
+                            <div class="mega-menu-column">
+                            <h4>Toiletries</h4>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Visual Care </h4>
+                            </div>
+                        </div>
+                    </div>             
+                </li>
+              
+                <li><a href="#">HAIRCARE</a></li>
+                <li><a href="#">BODYCARE</a></li>
+                <li><a href="#">ELECTRICALS</a></li>
+                <li><a href="#">BRANDS</a></li>
+                <li><a href="#">GIFTS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+        <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slides" role="region" aria-label="Featured Products Slideshow">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');">
+                <div class="hero-content-wrapper">
+                    <div class="hero-content">
+                        <h2>Radiant Beauty<br>Timeless Elegance. Elaraé.</h2>
+                        <p>Discover your signature glow with our luxury collection</p>
+                        <a href="#" class="btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');">
+                <div class="hero-content-wrapper">
+                    <div class="hero-content">
+                        <h2>Where Beauty Becomes Legend</h2>
+                        <p>Elaraé - Crafted for the divine in you</p>
+                        <a href="#" class="btn">Explore Fragrance</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: url('https://images.pexels.com/photos/6724383/pexels-photo-6724383.jpeg');">
+                <div class="hero-content-wrapper">
+                    <div class="hero-content">
+                        <h2>Arabian Glamour, Reimagined. Elaraé</h2>
+                        <p>Luxury skincare infused with Middle Eastern heritage</p>
+                        <a href="#" class="btn">Discover Skincare</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Navigation Dots -->
+        <div class="slide-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Shop Our Luxurious Collections</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                    <h3>Luxury Makeup</h3>
+                    <button class="btn btn-add-to-cart" 
+                        data-id="prod-001" 
+                        data-name="Luxury Makeup Set" 
+                        data-price="45.99">
+                        Add to Cart
+                    </button>
+                </div>
+
+                
+                <div class="category-card">
+                    <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                    <h3>Premium Skincare</h3>
+                    <a href="#" class="btn">Discover</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-img" style="background-image: url('https://images.pexels.com/photos/965990/pexels-photo-965990.jpeg');"></div>
+                    <h3>Exclusive Fragrance</h3>
+                    <a href="#" class="btn">Discover</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-img" style="background-image: url('https://images.pexels.com/photos/8467970/pexels-photo-8467970.jpeg');"></div>
+                    <h3>Haircare & Styling</h3>
+                    <a href="#" class="btn">Discover</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Best Offers Section -->
+    <section class="best-offers">
+        <div class="container">
+            <h2 class="section-title">Best Offers</h2>
+            <p class="section-subtitle">Limited-time luxury at exceptional value</p>
+            
+            <div class="offers-grid">
+                <!-- Product 1 -->
+                <div class="offer-card">
+                    <div class="offer-badge">-20%</div>
+                    <div class="offer-img" style="background-image: url('https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80')"></div>
+                    <div class="offer-details">
+                        <h3>Golden Radiance Set</h3>
+                        <div class="price">
+                            <span class="current-price">$59.99</span>
+                            <span class="original-price">$74.99</span>
+                        </div>
+                        <button class="btn btn-add-to-cart" 
+                                data-id="offer-001" 
+                                data-name="Golden Radiance Set" 
+                                data-price="59.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="offer-card">
+                    <div class="offer-badge">BESTSELLER</div>
+                    <div class="offer-img" style="background-image: url('https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80')"></div>
+                    <div class="offer-details">
+                        <h3>Luminous Foundation</h3>
+                        <div class="price">
+                            <span class="current-price">$42.99</span>
+                        </div>
+                        <button class="btn btn-add-to-cart" 
+                                data-id="offer-002" 
+                                data-name="Luminous Foundation" 
+                                data-price="42.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Add 2-4 more offer cards following the same structure -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Brands -->
+    <section class="featured-brands">
+        <div class="container">
+            <h2 class="section-title">Our Premium Beauty Partners</h2>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <img src="images/maybelline.png" alt="Maybelline">
+                </div>
+                <div class="brand-item">
+                    <img src="images/fentybeauty.png" alt="Fenty Beauty">
+                </div>
+                <div class="brand-item">
+                    <img src="images/maccosmetics.png" alt="MAC Cosmetics">
+                </div>
+                <div class="brand-item">
+                    <img src="images/esteelauder.png" alt="Estée Lauder">
+                </div>
+                <div class="brand-item">
+                    <img src="images/chanel.png" alt="Chanel">
+                </div>
+                <div class="brand-item">
+                    <img src="images/dior.png" alt="Dior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help & FAQs</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About Elaraé Beauty</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Stores</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Corporate Responsibility</a></li>
+                        <li><a href="#">Press Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility Statement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <h4>Join Our Exclusive List</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Elaraé Beauty. All rights reserved. Luxury Beauty for the Modern Iraqi Woman.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ======================
+            // 1. AUTO-SLIDING HERO
+            // ======================
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            let currentSlide = 0;
+            const slideInterval = 5000; // 5 seconds
+
+            function showSlide(index) {
+                // Hide all slides and remove active class from dots
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Show the selected slide and activate its dot
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            // Add click event to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    resetTimer();
+                });
+            });
+
+            let slideTimer = setInterval(nextSlide, slideInterval);
+
+            function resetTimer() {
+                clearInterval(slideTimer);
+                slideTimer = setInterval(nextSlide, slideInterval);
+            }
+            // Pause on hover
+            const hero = document.querySelector('.hero');
+            hero.addEventListener('mouseenter', () => clearInterval(slideTimer));
+            hero.addEventListener('mouseleave', resetTimer);
+
+
+            // Initialize first slide
+            showSlide(0);
+
+            // ======================
+            // 2. MEGA MENU DROPDOWNS
+            // ======================
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.querySelector('.mega-menu').style.display = 'block';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.querySelector('.mega-menu').style.display = 'none';
+                });
+            });
+
+            // ======================
+            // 3. MOBILE MENU TOGGLE
+            // ======================
+            const mobileMenuBtn = document.createElement('button');
+            mobileMenuBtn.className = 'mobile-menu-btn';
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            document.querySelector('.header .container').appendChild(mobileMenuBtn);
+
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'mobile-menu';
+            document.body.appendChild(mobileMenu);
+
+            function updateMobileMenu() {
+                const navList = document.querySelector('.nav-list').cloneNode(true);
+                navList.querySelectorAll('.mega-menu').forEach(menu => menu.remove());
+                mobileMenu.innerHTML = '';
+                mobileMenu.appendChild(navList);
+            }
+
+            mobileMenuBtn.addEventListener('click', function() {
+                updateMobileMenu();
+                mobileMenu.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+                    mobileMenu.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+
+            // ======================
+            // 4. CART FUNCTIONALITY
+            // ======================
+            const cartItems = [];
+            const cartBtn = document.querySelector('.auth-links a:last-child');
+            const cartCount = document.createElement('span');
+            cartCount.className = 'cart-count';
+            cartBtn.appendChild(cartCount);
+
+            function updateCartCount() {
+                cartCount.textContent = cartItems.length > 0 ? `(${cartItems.length})` : '';
+            }
+
+            // Example: Add to cart (attach to product buttons)
+            document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const product = {
+                        id: this.dataset.id,
+                        name: this.dataset.name,
+                        price: this.dataset.price
+                    };
+                    cartItems.push(product);
+                    updateCartCount();
+                    showToast(`${product.name} added to cart`);
+                });
+            });
+
+            // ======================
+            // 5. SEARCH FUNCTIONALITY
+            // ======================
+            const searchBar = document.querySelector('.search-bar');
+            searchBar.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const query = this.querySelector('input').value.trim();
+                if (query) {
+                    // In a real implementation, redirect to search results
+                    console.log('Searching for:', query);
+                    this.querySelector('input').value = '';
+                }
+            });
+
+            // ======================
+            // 6. TOAST NOTIFICATIONS
+            // ======================
+            function showToast(message) {
+                const toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.textContent = message;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.classList.add('show');
+                }, 10);
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            // ======================
+            // 7. RESPONSIVE ADJUSTMENTS
+            // ======================
+            function handleResponsive() {
+                if (window.innerWidth < 992) {
+                    // Tablet/mobile behaviors
+                } else {
+                    // Desktop behaviors
+                    mobileMenu.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            }
+
+            window.addEventListener('resize', handleResponsive);
+            handleResponsive();
+        });
+        // Sample code to generate product cards
+        products.forEach(product => {
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>$${product.price}</p>
+                <button class="btn btn-add-to-cart" 
+                        data-id="${product.id}" 
+                        data-name="${product.name}" 
+                        data-price="${product.price}">
+                    Add to Cart
+                </button>
+            `;
+        });
+
+        
+
+    </script>
+</body>
+</html>
